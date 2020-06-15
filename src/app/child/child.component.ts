@@ -1,5 +1,5 @@
 import { Component, OnInit , Input , Output,EventEmitter} from '@angular/core';
-
+import {Service1Service} from '../service1.service';
 
 @Component({
   selector: 'app-child',
@@ -8,7 +8,13 @@ import { Component, OnInit , Input , Output,EventEmitter} from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  constructor() { }
+ //service run 
+ constructor(private serviceEmplyoees : Service1Service) { }
+ public employees=[];
+ ngOnInit(): void {
+   this.employees=this.serviceEmplyoees.getEmplyoees();
+ }
+//end service
   message = 'Hi Parent';
   @Input() dataFromParent;
   @Output() passToParent = new EventEmitter();
@@ -18,7 +24,5 @@ export class ChildComponent implements OnInit {
  sayHello(){
     alert('hello');
   }
-  ngOnInit(): void {
-  }
-
+ 
 }

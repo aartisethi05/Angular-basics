@@ -1,3 +1,10 @@
 <p>child works!</p>
 <h2>{{dataFromParent}}</h2>
 <button (click)="sendMessage()">Send data to parent</button>
+
+//run service 
+//display employees through service in parent component
+
+    <div *ngFor="let emp of employees">
+        <li>emp</li>
+     </div>
