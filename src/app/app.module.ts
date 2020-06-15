@@ -9,6 +9,7 @@ import { ChildComponent } from './child/child.component';
 import { PurePipePipe } from './pure-pipe.pipe';
 import { ImpurePipePipe } from './impure-pipe.pipe';
 import { Parent2Component } from './parent2/parent2.component';
+import {Service1Service} from './service1.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { Parent2Component } from './parent2/parent2.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [Service1Service], //service class name
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class Service1Service {
 
-  constructor() {
-    
-   }
+  constructor() { }
+  getEmplyoees(){
+    return [
+      {'name':"Aarti" , "age":23 },
+      {'name':"Arun" , "age":22 },
+      {'name':"Naina" , "age":22 }
+    ]
+  }
 }

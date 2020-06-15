@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 import { viewClassName } from '@angular/compiler';
+import { Service1Service } from '../service1.service';
 
 @Component({
   selector: 'app-parent',
@@ -8,14 +9,20 @@ import { viewClassName } from '@angular/compiler';
 })
 export class ParentComponent implements OnInit {
 @ViewChild('name') username:ElementRef;
-  constructor() { }
+
+//service run 
+  constructor(private serviceEmplyoees : Service1Service) { }
+  public employees=[];
+  ngOnInit(): void {
+    this.employees=this.serviceEmplyoees.getEmplyoees();
+  }
+//end service
   passToChild : string = "Hi Child";
   dataFromChild:string
   getdata(event){
     this.dataFromChild = event;
   }
-  ngOnInit(): void {
-  }
+  
   public templateRef(val){
     alert(val);
   }
