@@ -1,0 +1,14 @@
+<p>parent works!</p>
+<app-child [dataFromParent]="passToChild" (passToParent)="dataFromChild=$event"></app-child>
+{{dataFromChild}}
+
+
+<app-child #child></app-child> //refer child methods through template ref variable 
+<button (click)="getChildRef(child)">child reference</button>
+
+
+<input type="text" #name value="aarti">//template reference variable
+<button (click)="templateRef(name.value)">show templateRef</button>
+<br/>
+<button (click)="viewchildfunction()">@viewchild function</button>
+
